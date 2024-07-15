@@ -83,6 +83,9 @@ The simulation phase involves the execution of the toolchain for each processor 
  - **Bambu HLS**:
  	- **[PandA-bambu](https://github.com/hepsycode/PandA-bambu)**: PandA Bambu HLS Framework;
 
+  - **Performance Application Programming Interface (PAPI)**:
+  	- **[PAPI](https://github.com/icl-utk-edu/papi)**: PAPI Project Repository;
+
 ### RELEASE NOTES
 Latest Release: 2.0.0
  
