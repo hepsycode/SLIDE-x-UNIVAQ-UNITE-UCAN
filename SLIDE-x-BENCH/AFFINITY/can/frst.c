@@ -11,7 +11,7 @@ typedef uint8_t TARGET_INDEX;
 	TARGET_TYPE i;
 	TARGET_TYPE y;
 
-void can()                /* usage: y = can3(m, a, b, w, x); TARGET_INDEX m, TARGET_TYPE a[m], TARGET_TYPE b[m], TARGET_TYPE w[m], TARGET_TYPE x */
+TARGET_TYPE can(TARGET_INDEX m, TARGET_TYPE a[m], TARGET_TYPE b[m], TARGET_TYPE w[m], TARGET_TYPE x)                /* usage: y = can3(m, a, b, w, x); */
 {
 
        w[0] = x;                                 /* read input sample */
@@ -26,12 +26,12 @@ void can()                /* usage: y = can3(m, a, b, w, x); TARGET_INDEX m, TAR
               y += b[i] * w[i];                  /* MAC instruction */
        }
 
-       // return y;                                 /* output sample */
+       return y;                                 /* output sample */
 }
 
 
 void main()
 {
-	can();
+	can(m, a, b, w, x);
 }
 

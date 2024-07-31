@@ -1,8 +1,8 @@
 #ifndef VALUES
 #define VALUES
-	enum{m = 2};
-	int8_t x = 42;
-	int8_t a[m] = {51, -78};
-	int8_t b[m] = {21, 68};
-	int8_t w[m] = {126, 83};
+	enum{m = 3};
+	int8_t x = 4;
+	int8_t a[m] = {-101, 69, 66};
+	int8_t b[m] = {-49, -82, 80};
+	int8_t w[m] = {57, 120, -48};
 #endif
