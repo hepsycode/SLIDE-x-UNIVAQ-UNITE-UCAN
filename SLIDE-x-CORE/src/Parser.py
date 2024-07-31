@@ -205,7 +205,8 @@ class Parser:
                             occLines = filePath.rsplit('/', 1)[1] + '.c:' + str(match.group(1))
                             #print('String:' + occLines)
 
-                            with open(filePath + '.c.006t.gimple', 'r') as execFile:  # BAMBU: .c.004t.gimple
+                            with open(filePath + '.c.006t.gimple', 'r') as execFile:
+                                # BAMBU: .c.004t.gimple
                                 gimpleIRCounttmp = sum(line.count(occLines) for line in execFile)
                             if gimpleIRCounttmp == 0:
                                 gimpleIRCount += int(number)
@@ -213,7 +214,8 @@ class Parser:
                                 gimpleIRCount += int(number) * gimpleIRCounttmp
                             # print('gimpleIRCount:' + str(gimpleIRCount) + '\n')
 
-                            with open(filePath + '.c.051t.release_ssa', 'r') as execFile:  # BAMBU: .c.049t.release_ssa
+                            with open(filePath + '.c.051t.release_ssa', 'r') as execFile:
+                                # BAMBU: .c.049t.release_ssa
                                 ssaReleaseIRCounttmp = sum(line.count(occLines) for line in execFile)
                             if ssaReleaseIRCounttmp == 0:
                                 ssaReleaseIRCount += int(number)
@@ -221,7 +223,8 @@ class Parser:
                                 ssaReleaseIRCount += int(number) * ssaReleaseIRCounttmp
                             # print('ssaReleaseIRCount:' + str(ssaReleaseIRCount) + '\n')
 
-                           with open(filePath + '.c.244t.optimized', 'r') as execFile:  # BAMBU: .c.227t.optimized
+                            with open(filePath + '.c.244t.optimized', 'r') as execFile:
+                               # BAMBU: .c.227t.optimized
                                 optimizedIRCounttmp = sum(line.count(occLines) for line in execFile)
                             if optimizedIRCounttmp == 0:
                                 optimizedIRCount += int(number)
