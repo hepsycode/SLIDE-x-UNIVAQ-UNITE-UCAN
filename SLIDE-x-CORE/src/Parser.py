@@ -795,6 +795,21 @@ class Parser:
             values.extend(params)
             self.writeFile({key:value for key, value in zip(self.headers, values)})
 
+    def simParserA53(filePath):
+        """Generic parsing for the output file of ArmA53
+
+        Args:
+            simFilename (string):  the name of the file that contains execution information
+
+        Returns:
+            string: number of clock cycles
+
+        Todo:
+            * Not Generic, it works only with the micros already tested
+        """
+        results = []
+        return results
+
     PARSERS = {
         'Thumb': thumbParser,
         'Leon3': simParser,
@@ -802,5 +817,6 @@ class Parser:
         'Atmega328p': simParser,
         'Arm': simParser,
         'Bambu': simParserBambu,
-        'RiscV': riscVParser
+        'RiscV': riscVParser,
+        'ArmA53': simParser
     }

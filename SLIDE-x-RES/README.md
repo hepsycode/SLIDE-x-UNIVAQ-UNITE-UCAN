@@ -1,3 +1,0 @@
-# SLIDE-x-RES
-
-WIP

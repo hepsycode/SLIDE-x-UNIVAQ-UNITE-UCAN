@@ -1,0 +1,40 @@
+
+ TSIM3 LEON3 SPARC simulator, version 3.1.11 (evaluation version)
+
+ Copyright (C) 2024, Frontgrade Gaisler - all rights reserved.
+ This software may only be used with a valid license.
+ For latest updates, go to https://www.gaisler.com/
+ Comments or bug-reports to support@gaisler.com
+
+ This TSIM evaluation version will expire 2025-05-04
+
+Number of CPUs: 2
+system frequency: 50.000 MHz
+icache: 1 * 4 KiB, 16 bytes/line (4 KiB total)
+dcache: 1 * 4 KiB, 16 bytes/line (4 KiB total)
+Allocated 8192 KiB SRAM memory, in 1 bank at 0x40000000
+Allocated 32 MiB SDRAM memory, in 1 bank at 0x60000000
+Allocated 8192 KiB ROM memory at 0x00000000
+section: .text, addr: 0x40000000, size: 11872 bytes
+section: .rodata, addr: 0x40002e60, size: 16 bytes
+section: .data, addr: 0x40002e70, size: 168 bytes
+read 253 symbols
+
+
+  Initializing and starting from 0x40000000
+
+  Program exited normally on CPU 0.
+  Merged performance statistics for all started CPUs:
+   Cycles       :      4356
+   Instructions :      1561
+   Overall CPI  :      2.79
+   CPU performance (50.0 MHz)  :  17.92 MOPS (17.92 MIPS, 0.00 MFLOPS)
+   Cache hit rate              :   86.1 % (inst: 87.1, data: 66.7)
+   Simulated time              :   0.09 ms
+   Processor utilisation       : 100.00 %
+
+  Performance of the simulator:
+   Real-time performance       : 102.36 %
+   Simulator performance       :  18.34 MIPS
+   Used time (sys + user)      :   0.00 s
+
