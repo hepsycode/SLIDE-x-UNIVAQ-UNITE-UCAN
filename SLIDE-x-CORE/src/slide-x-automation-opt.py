@@ -477,7 +477,7 @@ for idxF, itemF in enumerate(functions):
         cmdMan = CommandsManager(funSrc, configsrc, gui.results, '')
 
         InputGen = 1
-        GCovExe = 1
+        GCovExe = 0
         FramaCExe = 0
         SimExe = 1
 
@@ -763,7 +763,7 @@ for idxF, itemF in enumerate(functions):
                 endCommands = timer()
                 simTime = endCommands - startCommands
 
-                if (SimExe):
+                if (SimExe and GCovExe):
                     """
                     CC4CS
                     """
@@ -866,7 +866,18 @@ for idxF, itemF in enumerate(functions):
                 #    os.remove("parameters.json")
 
                 # rmtree("includes/")
-                rmtree("files/")
-                rmtree("files_gcov/")
-            # rmtree("files_framac/")
-            # rmtree("filesISS/")
+
+                # if os.path.isdir("includes/"):
+                    # shutil.rmtree("includes/")
+
+                if os.path.isdir("files/"):
+                    shutil.rmtree("files/")
+
+                if os.path.isdir("files_gcov/"):
+                    shutil.rmtree("files_gcov/")
+
+            # if os.path.isdir("files_framac/"):
+                # shutil.rmtree("files_framac/")
+
+            # if os.path.isdir("filesISS/"):
+                # shutil.rmtree("filesISS/")
