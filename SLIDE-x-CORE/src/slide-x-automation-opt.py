@@ -58,7 +58,7 @@ matrixFolderName = '32x32'
 # TODO: automatic switching between signed and unsigned types
 # Global Variables
 filess = {'8051': 'scnd.c', 'Leon3': 'frst.c', 'Thumb': 'frst.c', 'Atmega328p': 'frst.c', 'Arm': 'frst.c',
-          'Bambu': 'frst.c', 'RiscV': 'frst.c', 'ALL': 'frst.c'}
+          'Bambu': 'frst.c', 'RiscV': 'frst.c', 'ArmA53': 'frst.c', 'ALL': 'frst.c'}
 
 # targets = ["int8_t", "int16_t", "int32_t", "int64_t", "float", "double"]  # TARGET_TYPE types
 # indexes = ["uint8_t", "uint8_t", "uint8_t", "uint8_t", "uint8_t", "uint8_t"]  # TARGET_INDEX types
@@ -92,7 +92,7 @@ functions = ['bs', 'bsort100', 'cnt', 'fdct', 'fibcall', 'insertionsort', 'lud',
 targets = ["int8_t"]  # TARGET_TYPE types
 indexes = ["uint8_t"]  # TARGET_INDEX types
 
-simulations = ['Leon3']  # ['Leon3', 'RiscV', 'Atmega328p', 'Thumb', 'Arm']
+simulations = ['ArmA53']  # ['Leon3', 'RiscV', 'Atmega328p', 'Thumb', 'Arm']
 functions = ['can'] # 'bs', 'bsort100', 'cnt', 'fdct', 'fibcall', 'insertionsort', 'lud', 'matrix_mult', 'select', 'shell_sort'
 
 # simulations = ['Leon3', 'RiscV', 'Thumb', 'Arm', 'Atmega328p']  # ['Leon3', 'RiscV', 'Atmega328p', 'Thumb', 'Arm']
@@ -478,7 +478,7 @@ for idxF, itemF in enumerate(functions):
 
         InputGen = 1
         GCovExe = 1
-        FramaCExe = 1
+        FramaCExe = 0
         SimExe = 1
 
         # Start whole execution time
@@ -681,6 +681,21 @@ for idxF, itemF in enumerate(functions):
                         cmdMan.executeCommandSet(cmds[gui.micro], inputsPath, 'files', parsingFunction=parser.run)
                         print("ISS Performance Simulation Done!")
 
+                    elif gui.micro == 'ArmA53':
+
+                        print("\n Simulation on the LEON3 target platform...", end="\n\n")
+
+                        if os.path.exists(gui.results + "/clockCycles.csv"):
+                            os.remove(gui.results + "/clockCycles.csv")
+
+                        parser = Parser(gui.results + "/clockCycles.csv", Parser.PARSERS.get(gui.micro),
+                                        ['id', 'clockCycles', 'assemblyInstr', 'cacheHit', 'cacheHitInstr',
+                                         'cacheHitData', 'MOPS', 'MIPS', 'MFLOPS'])
+
+                        cmdMan.executeCommandSet(cmds[gui.micro], inputsPath, 'files', parsingFunction=parser.run)
+
+                        print("ISS Performance Simulation Done!")
+
                     elif gui.micro == 'RiscV':
 
                         print("\n Simulation on the RiscV target platform...", end="\n\n")
@@ -853,5 +868,5 @@ for idxF, itemF in enumerate(functions):
                 # rmtree("includes/")
                 rmtree("files/")
                 rmtree("files_gcov/")
-            rmtree("files_framac/")
+            # rmtree("files_framac/")
             # rmtree("filesISS/")

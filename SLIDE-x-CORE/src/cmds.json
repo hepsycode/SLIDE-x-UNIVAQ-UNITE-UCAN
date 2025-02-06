@@ -28,6 +28,14 @@
 		"size": "size [prjPath]/files/[directoryName]/[functionName] {size.txt}"
 	},
 
+	"ArmA53": {
+		"additionalFile": "cp [scriptPath]/src/tsim_cmd [prjPath]includes/",
+		"iss": "tsim-leon3 [functionName] -c [prjPath]includes/tsim_cmd {[functionName].txt}",
+		"compiler":"sparc-gaisler-elf-gcc [OptimizationFlag] [functionPath] -I[prjPath]includes/[directoryName] -o [functionName]",
+		"dependencies": "additionalFile compiler iss size",
+		"size": "size [prjPath]/files/[directoryName]/[functionName] {size.txt}"
+	},
+
 	"8051": {
 		"compiler": "sdcc [functionPath] --stack-auto -mmcs51 --model-large --xram-loc 0xE000 --xram-size 8192 --code-size 32768 -I[prjPath]includes/[directoryName]",
 		"iss": "isasim [functionName].hex {[functionName].txt}",
