@@ -20,7 +20,7 @@ configsrc = dirname(realpath(__file__).rsplit("/", 1)[0])
 projectPath = dirname(configsrc) + '/'
 benchmarkFolder = '/SLIDE-x-BENCH/AFFINITY/'  # '/benchmark/POLYBENCH/linear-algebra/kernels/'
 
-optFlagsArr = ['-O1'];
+optFlagsArr = ['-O0','-O1'];
 """
             ,'-O1 -fcse-follow-jumps -fno-tree-ter -ftree-vectorize',
             '-O1 -fno-cprop-registers -fno-dce -fno-move-loop-invariants -frename-registers -fno-tree-copy-prop -fno-tree-copyrename',
@@ -45,7 +45,7 @@ optFlagsArr = ['-O1'];
             '-Os', '-Ofast', '-Og']  # 23 Optimization flags
 """
 
-optNameFolderArr = ['optO1-00']
+optNameFolderArr = ['opt01-00','optO1-01']
 """
     ,'optO1-01', 'optO1-02', 'optO1-03',
                     'optO2-00', 'optO2-01', 'optO2-02', 'optO2-03', 'optO3-04', 'optO2-05', 'optO2-06', 'optO2-07', 'optO2-08', 'optO2-09',
@@ -89,8 +89,8 @@ simulations = ['Leon3', 'Atmega328p', 'Thumb', 'Arm']   #  , 'RiscV'
 functions = ['bs', 'bsort100', 'cnt', 'fdct', 'fibcall', 'insertionsort', 'lud', 'matrix_mult', 'select', 'shell_sort']  
 """
 
-targets = ["int8_t"]  # TARGET_TYPE types
-indexes = ["uint8_t"]  # TARGET_INDEX types
+targets = ["int8_t","int16_t"]  # TARGET_TYPE types
+indexes = ["uint8_t","uint16_t"]  # TARGET_INDEX types
 
 simulations = ['ArmA53']  # ['Leon3', 'RiscV', 'Atmega328p', 'Thumb', 'Arm']
 functions = ['can'] # 'bs', 'bsort100', 'cnt', 'fdct', 'fibcall', 'insertionsort', 'lud', 'matrix_mult', 'select', 'shell_sort'
@@ -870,11 +870,11 @@ for idxF, itemF in enumerate(functions):
                 # if os.path.isdir("includes/"):
                     # shutil.rmtree("includes/")
 
-                if os.path.isdir("files/"):
-                    shutil.rmtree("files/")
+                # if os.path.isdir("files/"):
+                    # shutil.rmtree("files/")
 
-                if os.path.isdir("files_gcov/"):
-                    shutil.rmtree("files_gcov/")
+                # if os.path.isdir("files_gcov/"):
+                    # shutil.rmtree("files_gcov/")
 
             # if os.path.isdir("files_framac/"):
                 # shutil.rmtree("files_framac/")

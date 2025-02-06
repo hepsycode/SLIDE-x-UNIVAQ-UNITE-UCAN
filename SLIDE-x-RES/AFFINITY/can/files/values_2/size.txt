@@ -1,0 +1,2 @@
+   text	   data	    bss	    dec	    hex	filename
+  11920	    176	    376	  12472	   30b8	/home/federico/Scrivania/SLIDE-x-Repository/SLIDE-x-UNIVAQ-UNITE-UCAN/SLIDE-x-RES/AFFINITY/can//files/values_2/frst

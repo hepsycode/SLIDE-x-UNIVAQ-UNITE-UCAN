@@ -3,8 +3,8 @@
 #include <stdint.h>
 #include <values.h>
 
-typedef int8_t TARGET_TYPE;
-typedef uint8_t TARGET_INDEX;
+typedef int16_t TARGET_TYPE;
+typedef uint16_t TARGET_INDEX;
 
 //void prototype(TARGET_INDEX m, TARGET_TYPE a[m], TARGET_TYPE b[m], TARGET_TYPE w[m], TARGET_TYPE x);
 
