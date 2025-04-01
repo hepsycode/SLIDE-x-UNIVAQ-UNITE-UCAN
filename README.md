@@ -63,6 +63,16 @@ The simulation phase involves the execution of the toolchain for each processor 
 - **LEON3**: 
 	- **[tsim-leon3](https://www.gaisler.com/index.php/downloads/simulators)**: the instruction set simulator for the LEON3;  
 	- **[sparc-gaisler-elf-gcc](https://www.gaisler.com/index.php/downloads/compilers)**: the cross-compiler for the SPARC ISA;
+ - In order to start with Leon3, follow the steps:
+ 	- Download the [TSIM Evaluation for Leon3](https://download.gaisler.com/products/TSIM3/bin/tsim-eval/tsim-eval-3.1.11.tar.gz)
+  	- Extract it and add the bin folder into PATH
+   	- download [BCC2](http://download.gaisler.com/anonftp/bcc2/bin/)
+   	- extract it and add the bin folder into PATH
+   	- At this point, simulator and compiler are set
+   	- Clone this repository
+   	- go inside SLIDE-x-CORE/src/slide-x-automation-opt.py and set simulations = ['ArmA53'] and functions = ['can']
+   	- Execute launch.sh
+   	- the system will compile, execute (in simulation), and report the results
 
 - **Intel MCS-51 (8051)**:
 	- **[sdcc](http://sdcc.sourceforge.net/)**: the cross-compiler for the 8051;
